@@ -12,13 +12,24 @@ export default function UsersPage() {
 
   const filteredUsers = filterUsers(users, search);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading)
+    return <p className="text-center py-12 text-slate-500">Loading...</p>;
+  if (error) return <p className="text-center py-12 text-rose-600">{error}</p>;
 
   return (
     <>
-      <SearchInput value={search} onChange={setSearch} />
-      <UserList users={filteredUsers} onSelect={setSelectedUser} />
+      <div className="bg-slate-50 border-b border-slate-200">
+        <div className="max-w-5xl mx-auto px-8 py-12">
+          <h1 className="text-2xl font-semibold text-slate-900 mb-6">
+            Peeps: People Search Directory
+          </h1>
+          <SearchInput value={search} onChange={setSearch} />
+        </div>
+      </div>
+
+      <div className="max-w-5xl mx-auto px-8 py-8">
+        <UserList users={filteredUsers} onSelect={setSelectedUser} />
+      </div>
 
       {selectedUser && (
         <UserModal user={selectedUser} onClose={() => setSelectedUser(null)} />
