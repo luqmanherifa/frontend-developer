@@ -9,10 +9,21 @@ export default function LoginForm() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    const email = emailRef.current.value;
+    const email = emailRef.current.value.trim();
     const password = passwordRef.current.value;
 
-    if (!email.includes("@")) {
+    if (!email) {
+      setError("Email is required");
+      return;
+    }
+
+    if (!password) {
+      setError("Password is required");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
       setError("Email is not valid");
       return;
     }
@@ -28,6 +39,7 @@ export default function LoginForm() {
   return (
     <form
       onSubmit={handleSubmit}
+      noValidate
       className="border border-slate-200 rounded-lg p-6 bg-white space-y-4"
     >
       <div>
