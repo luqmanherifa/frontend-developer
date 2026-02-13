@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <nav className="border-b border-slate-200 bg-white">
-      <div className="max-w-5xl mx-auto px-8 py-4 flex items-center gap-8">
+      <div className="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <img src="/peeps.svg" alt="Peeps" className="w-6 h-6" />
           <span className="font-semibold text-slate-900">Peeps</span>
