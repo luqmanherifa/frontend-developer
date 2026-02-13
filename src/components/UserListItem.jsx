@@ -1,12 +1,22 @@
 export default function UserListItem({ user, onSelect }) {
   return (
-    <li
+    <div
       onClick={() => onSelect(user)}
-      className="border border-slate-200 rounded-md px-4 py-3 cursor-pointer hover:border-rose-300 hover:bg-rose-50 transition-colors"
+      className="border border-slate-200 rounded-md overflow-hidden cursor-pointer hover:border-rose-300 transition-colors"
     >
-      <strong className="text-slate-900">{user.name}</strong>
-      <span className="text-slate-500"> — {user.email}</span>
-      <span className="text-slate-400"> ({user.company.name})</span>
-    </li>
+      <div className="bg-slate-100 flex items-center justify-center h-32">
+        <img src="/peeps.svg" alt="" className="w-12 h-12" />
+      </div>
+
+      <div className="p-3">
+        <p className="font-medium text-slate-900 text-sm truncate">
+          {user.name}
+        </p>
+        <p className="text-slate-500 text-xs truncate">{user.email}</p>
+        <p className="text-slate-400 text-xs truncate mt-1">
+          {user.company.name}
+        </p>
+      </div>
+    </div>
   );
 }

@@ -19,7 +19,7 @@ export default function UsersPage() {
   return (
     <>
       <div className="bg-slate-50 border-b border-slate-200">
-        <div className="max-w-5xl mx-auto px-8 py-12">
+        <div className="max-w-7xl mx-auto px-8 py-12">
           <h1 className="text-2xl font-semibold text-slate-900 mb-6">
             Peeps: People Search Directory
           </h1>
@@ -27,7 +27,7 @@ export default function UsersPage() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-8 py-8">
+      <div className="max-w-7xl mx-auto px-8 py-8">
         <UserList users={filteredUsers} onSelect={setSelectedUser} />
       </div>
 

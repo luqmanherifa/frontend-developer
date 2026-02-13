@@ -6,10 +6,10 @@ export default function UserList({ users, onSelect }) {
   }
 
   return (
-    <ul className="space-y-3">
+    <div className="grid grid-cols-5 gap-4">
       {users.map((user) => (
         <UserListItem key={user.id} user={user} onSelect={onSelect} />
       ))}
-    </ul>
+    </div>
   );
 }
