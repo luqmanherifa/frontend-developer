@@ -26,13 +26,36 @@ export default function LoginForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="email" ref={emailRef} placeholder="Email" />
-      <input type="password" ref={passwordRef} placeholder="Password" />
+    <form
+      onSubmit={handleSubmit}
+      className="border border-slate-200 rounded-lg p-6 bg-white space-y-4"
+    >
+      <div>
+        <input
+          type="email"
+          ref={emailRef}
+          placeholder="Email"
+          className="w-full px-4 py-2 border border-slate-300 rounded-md text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500"
+        />
+      </div>
 
-      <button type="submit">Submit</button>
+      <div>
+        <input
+          type="password"
+          ref={passwordRef}
+          placeholder="Password"
+          className="w-full px-4 py-2 border border-slate-300 rounded-md text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500"
+        />
+      </div>
 
-      {error && <p>{error}</p>}
+      <button
+        type="submit"
+        className="w-full px-4 py-2 bg-rose-600 text-white rounded-md hover:bg-rose-700 transition-colors font-medium"
+      >
+        Submit
+      </button>
+
+      {error && <p className="text-rose-600 text-sm text-center">{error}</p>}
     </form>
   );
 }
