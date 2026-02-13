@@ -1,13 +1,17 @@
 export function filterUsers(users, query) {
-  if (!query) return users;
+  const keyword = query.trim().toLowerCase();
 
-  const keyword = query.toLowerCase();
+  if (!keyword) return users;
 
   return users.filter((user) => {
+    const name = user.name.toLowerCase();
+    const email = user.email.toLowerCase();
+    const company = user.company.name.toLowerCase();
+
     return (
-      user.name.toLowerCase().includes(keyword) ||
-      user.email.toLowerCase().includes(keyword) ||
-      user.company.name.toLowerCase().includes(keyword)
+      name.includes(keyword) ||
+      email.includes(keyword) ||
+      company.includes(keyword)
     );
   });
 }
