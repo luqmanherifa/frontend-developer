@@ -1,6 +1,6 @@
 import UserListItem from "./UserListItem";
 
-export default function UserList({ users }) {
+export default function UserList({ users, onSelect }) {
   if (!users.length) {
     return <p>No users found.</p>;
   }
@@ -8,7 +8,7 @@ export default function UserList({ users }) {
   return (
     <ul>
       {users.map((user) => (
-        <UserListItem key={user.id} user={user} />
+        <UserListItem key={user.id} user={user} onSelect={onSelect} />
       ))}
     </ul>
   );

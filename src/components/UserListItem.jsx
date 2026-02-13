@@ -1,7 +1,7 @@
-export default function UserListItem({ user }) {
+export default function UserListItem({ user, onSelect }) {
   return (
-    <li>
-      <strong>{user.name}</strong> - {user.email} ({user.company.name})
+    <li onClick={() => onSelect(user)}>
+      <strong>{user.name}</strong> — {user.email} ({user.company.name})
     </li>
   );
 }
